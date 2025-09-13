@@ -1,0 +1,137 @@
+.caja-ejemplo {
+    margin: $esp-med 0;
+    padding: $esp-chico;
+    border: 2px solid $color-oscuro;
+    border-radius: $radio;
+
+    .margen-cero {
+        margin: 0;
+    }
+
+}
+
+/* título */
+.titulo-seccion {
+    margin-bottom: $esp-med;
+    font-size: $titulo-seccion;
+    font-weight: bold;
+}
+
+/* botones */
+.boton-dark {
+    display: inline-block;
+    background: $color-oscuro;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+/* tarjetas */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $esp-med;
+}
+
+.tarjeta {
+    background: $color-tarjeta;
+    border: 1px solid $color-borde;
+    border-radius: $radio;
+    overflow: hidden;
+
+    .tarjeta-imagen {
+        display: block;
+        width: 100%;
+    }
+
+    .tarjeta-cuerpo {
+        padding: $esp-chico;
+    }
+
+    .tarjeta-titulo {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .tarjeta-texto {
+        margin: 0;
+        font-size: $texto-chico;
+        color: #444;
+    }
+}
+
+/* referencias */
+.tarjetas-ref {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $esp-med;
+
+    .tarjeta-ref {
+        background: $color-tarjeta;
+        border: 1px solid $color-borde;
+        border-radius: $radio;
+        padding: $esp-chico;
+
+        .tarjeta-cuerpo {
+            p {
+                margin: 0 0 8px;
+                font-size: $texto-chico;
+                color: #333;
+            }
+
+            .tarjeta-nombre {
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/* formulario de contacto */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: $esp-med;
+    max-width: 600px;
+
+    .campo-form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    }
+}
+
+/* --- Carousel --- */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* responsive */
+@include mobile {
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjetas-ref {
+        grid-template-columns: 1fr;
+    }
+}
